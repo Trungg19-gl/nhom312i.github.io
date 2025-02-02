@@ -1,0 +1,2225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NHÓM 3 - 12I</title>    
+    <link rel="shortcut icon" href="hhttps://i.postimg.cc/L6tt8bNF/312440446-542368331238174-3632047258927883131-n.jpg" type="image/x-icon">
+    <style type="text/css">     
+:root {
+    --bg-gradient-onyx: linear-gradient(to bottom right, hsl(240, 1%, 25%) 3%, hsl(0, 0%, 19%) 97%);
+    --bg-gradient-jet: linear-gradient(to bottom right, hsla(240, 1%, 18%, .251) 3%, hsla(240, 2%, 11%, 0) 100%), hsl(240, 2%, 13%);
+    --bg-gradient-yellow1: linear-gradient(to bottom right, hsl(45, 100%, 71%) 0%, hsla(36, 100%, 69%, 0) 50%);
+    --bg-gradient-yellow2: linear-gradient(135deg, hsla(45, 100%, 71%, .251) 0%, hsla(35, 100%, 68%, 0) 59.86%), hsl(240, 2%, 13%);
+    --border-gradient-onyx: linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%);
+    --text-gradient-yellow: linear-gradient(to right, hsl(45, 100%, 72%), hsl(35, 100%, 68%));
+
+    --jet: hsl(0, 0%, 22%);
+    --onyx: hsl(240, 1%, 17%);
+    --eerie-black1: hsl(240, 2%, 13%);
+    --eerie-black2: hsl(240, 2%, 12%);
+    --smoky-black: hsl(0, 0%, 7%);
+    --white1: hsl(0, 0%, 100%);
+    --white2: hsl(0, 0%, 98%);
+    --orange-yellow-crayola: hsl(45, 100%, 72%);
+    --vegas-gold: hsl(45, 54%, 58%);
+    --light-gray: hsl(0, 0%, 84%);
+    --light-gray70: hsla(0, 0%, 84%, .7);
+    --bittersweet-shimmer: hsl(0, 43%, 51%);
+
+    --ff-poppins: 'Poppins', sans-serif;
+
+    --fs1: 24px;
+    --fs2: 18px;
+    --fs3: 17px;
+    --fs4: 16px;
+    --fs5: 15px;
+    --fs6: 14px;
+    --fs7: 13px;
+    --fs8: 12px;
+
+    --fw300: 300;
+    --fw400: 400;
+    --fw500: 500;
+    --fw600: 600;
+
+    --shadow1: -4px 8px 24px hsla(0, 0%, 0%, .25);
+    --shadow2: 0px 16px 30px hsla(0, 0%, 0%, .25);
+    --shadow3: 0px 16px 40px hsla(0, 0%, 0%, .25);
+    --shadow4: 0px 25px 50px hsla(0, 0%, 0%, .15);
+    --shadow5: 0px 24px 80px hsla(0, 0%, 0%, .25);
+
+    --transition1: .25s ease;
+    --transition2: .5s ease-in-out;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+b, i {
+    color: inherit; /* Kế thừa màu sắc từ phần tử cha */
+}
+
+a {text-decoration: none; }
+
+li {list-style: none; }
+
+img, ion-icon, a, button, time, span { display: block; }
+
+button {
+    font: inherit;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+}
+
+input, textarea {
+    display: block;
+    width: 100%;
+    background: none;
+    font: inherit;
+}
+
+::selection {
+    background: var(--orange-yellow-crayola);
+    color: var(--smoky-black);
+}
+
+:focus { outline-color: var(--orange-yellow-crayola); }
+
+html { font-family: var(--ff-poppins); }
+
+body { background: var(--smoky-black); }
+
+main {
+    margin: 15px 12px;
+    margin-bottom: 75px;
+    min-width: 259px;
+}
+ul {
+    list-style: none; /* Xóa dấu chấm mặc định */
+    padding-left: 20px; /* Căn lề */
+}
+
+ul , li {
+    margin-bottom: 4px; /* Khoảng cách giữa các dòng */
+    color: #c3c3c5;
+}
+
+
+
+.sidebar, article {
+    background: var(--eerie-black2);
+    border: 1px solid var(--jet);
+    border-radius: 20px;
+    box-shadow: var(--shadow1);
+    z-index: 1;
+    padding: 15px;
+}
+
+    .sidebar.active { max-height: 405px; }
+
+.separator {
+    width: 100%;
+    height: 1px;
+    background: var(--jet);
+    margin: 16px 0;
+}
+
+.icon-box {
+    position: relative;
+    background: var(--border-gradient-onyx);
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: var(--orange-yellow-crayola);
+    box-shadow: var(--shadow1);
+    z-index: 1;
+}
+
+    .icon-box::before {
+        content: '';
+        position: absolute;
+        inset: 1px;
+        background: var(--eerie-black1);
+        border-radius: inherit;
+        z-index: -1;
+    }
+
+    .icon-box ion-icon { --ionicon-stroke-width: 35px; }
+
+article { display: none; }
+
+    article.active { 
+        display: block;
+        animation: fade .5s ease backwards;
+    }
+
+        @keyframes fade {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+.h2, .h3, .h4, .h5 { 
+    color: var(--white2);
+    text-transform: capitalize;
+}
+
+    .h2 { font-size: var(--fs1); }
+    .h3 { font-size: var(--fs2); }
+    .h4 { font-size: var(--fs4); }
+    .h5 { 
+        font-size: var(--fs7);
+        font-weight: var(--fw500); 
+    }
+
+.article-title {
+    position: relative;
+    padding-bottom: 7px;
+}
+
+    .article-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 30px;
+        height: 3px;
+        background: var(--text-gradient-yellow);
+        border-radius: 3px;
+    }
+
+.has-scrollbar::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.has-scrollbar::-webkit-scrollbar-track {
+    background: var(--onyx);
+    border-radius: 5px;
+}
+
+.has-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--orange-yellow-crayola);
+    border-radius: 5px;
+}
+
+.has-scrollbar::-webkit-scrollbar-button { width: 20px; }
+
+.content-card {
+    position: relative;
+    background: var(--border-gradient-onyx);
+    padding: 15px;
+    padding-top: 45px;
+    border-radius: 14px;
+    box-shadow: var(--shadow2);
+    cursor: pointer;
+    z-index: 1;
+}
+
+    .content-card::before {
+        content: '';
+        position: absolute;
+        inset: 1px;
+        background: var(--bg-gradient-jet);
+        border-radius: inherit;
+        z-index: -1;
+    }
+
+/*ASIDE - SIDEBAR*/
+
+.sidebar {
+    margin-bottom: 15px;
+    max-height: 112px;
+    overflow: hidden;
+    padding: 15px;
+    transition: var(--transition2);
+}
+
+.sidebar-info {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+}
+
+
+
+.avatar-box {
+    background: var(--bg-gradient-onyx);
+    border-radius: 20px;
+}
+
+.info-content .name {
+    color: var(--white2);
+    font-size: var(--fs3);
+    font-weight: var(--fw500);
+    letter-spacing: -0.25px;
+    margin-bottom: 10px;
+}
+
+.info-content .title {
+    color: var(--white1);
+    background: var(--onyx);
+    font-size: var(--fs8);
+    font-weight: var(--fw300);
+    width: max-content;
+    padding: 3px 12px;
+    border-radius: 8px;
+}
+
+.info-more-btn {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    border-radius: 0 15px;
+    font-size: 13px;
+    color: var(--orange-yellow-crayola);
+    background: var(--border-gradient-onyx);
+    padding: 10px;
+    box-shadow: var(--shadow2);
+    transition: var(--transition1);
+    z-index: 1;
+}
+
+    .info-more-btn::before {
+        content: '';
+        position: absolute;
+        inset: 1px;
+        border-radius: inherit;
+        background: var(--bg-gradient-jet);
+        transition: var(--transition1);
+        z-index: -1;
+    }
+
+        .info-more-btn:hover, .info-more-btn:focus { background: var(--bg-gradient-yellow1); }
+        .info-more-btn:hover::before, .info-more-btn:focus::before { background: var(--bg-gradient-yellow2); }
+
+    .info-more-btn span { display: none; }
+
+.sidebar-info-more {
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition2);
+}
+
+    .sidebar.active .sidebar-info-more {
+        opacity: 1;
+        visibility: visible;
+    }
+
+.contacts-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.contact-item {
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.contact-info {
+    max-width: calc(100% - 46px);
+    width: calc(100% - 46px);
+}
+
+    .contact-info :is(.contact-link, time, address) {
+        color: var(--white2);
+        font-size: var(--fs7);
+    }
+
+    .contact-info address { font-style: normal; }
+
+.contact-title {
+    color: var(--light-gray70);
+    font-size: var(--fs8);
+    text-transform: uppercase;
+    margin-bottom: 2px;
+    white-space: nowrap;
+}
+
+.social-list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 4px;
+    padding-left: 7px;
+}
+
+.social-item .social-link {
+    color: var(--light-gray70);
+    font-size: 18px;
+}
+
+    .social-item .social-link:hover { color: var(--light-gray); }
+
+/*NAVBAR*/
+
+.navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: hsla(240, 1%, 17%, .75);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--jet);
+    border-radius: 12px 12px 0 0;
+    box-shadow: var(--shadow2);
+    z-index: 5;
+}
+
+.navbar-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.navbar-link {
+    color: var(--light-gray);
+    font-size: var(--fs8);
+    padding: 20px 7px;
+    transition: color var(--transition1);
+}
+
+    .navbar-link:hover, .navbar-link:focus { color: var(--light-gray70); }
+    .navbar-link.active { color: var(--orange-yellow-crayola); }
+
+/*ABOUT*/
+
+.about .article-title { 
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.about-text {
+    color: var(--light-gray);
+    font-size: var(--fs6);
+    font-weight: var(--fw300);
+    line-height: 1.6;
+}
+
+    .about-text p { 
+        margin-bottom: 15px;
+        text-align: justify;
+        padding-left: 10px;
+        padding-right: 10px;
+     }
+
+.service { margin-bottom: 35px; }
+
+.service-title { margin-bottom: 20px; }
+
+.service-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.service-item {
+    position: relative;
+    background: var(--border-gradient-onyx);
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: var(--shadow2);
+    z-index: 1;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+    .service-item::before {
+        content: '';
+        position: absolute;
+        inset: 1px;
+        background: var(--bg-gradient-jet);
+        border-radius: inherit;
+        z-index: -1;
+        transform: scale(1.05);
+    }
+
+.service-icon-box { margin-bottom: 10px; }
+    .service-icon-box img { margin: auto; }
+
+.service-content-box { text-align: center; }
+.service-item-title { margin-bottom: 7px; }
+
+.service-item-text {
+    color: var(--light-gray);
+    font-size: var(--fs6);
+    font-weight: var(--fw300);
+    line-height: 1.6;
+}
+
+/*TESTIMONIALS*/
+
+.testimonials { margin-bottom: 30px; }
+.testimonials-title { margin-bottom: 20px; }
+
+.testimonials-list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 15px;
+    margin: 0 -15px;
+    padding: 25px 15px;
+    padding-bottom: 35px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+}
+
+.testimonials-item {
+    min-width: 100%;
+    scroll-snap-align: center;
+}
+
+.testimonials-avatar-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(15px, -25px);
+    background: var(--bg-gradient-onyx);
+    border-radius: 14px;
+    box-shadow: var(--shadow1);
+}
+
+.testimonials-text {
+    color: var(--light-gray);
+    font-size: var(--fs6);
+    font-weight: var(--fw300);
+    line-height: 1.6;
+    display: -webkit-box;
+    line-clamp: 4;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/*MODAL CONTAINER*/
+
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    z-index: 20;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+    .modal-container::-webkit-scrollbar { display: none; }
+
+    .modal-container.active {
+        pointer-events: all;
+        visibility: visible;
+    }
+
+        .modal-container.active .testimonials-modal {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: hsl(0, 0%, 5%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 1;
+    transition: var(--transition1);
+}
+
+    .overlay.active {
+        opacity: .8;
+        visibility: visible;
+        pointer-events: all;
+    }
+
+.testimonials-modal {
+    background: var(--eerie-black2);
+    position: relative;
+    padding: 15px;
+    margin: 15px 12px;
+    border: 1px solid var(--jet);
+    border-radius: 14px;
+    box-shadow: var(--shadow5);
+    transform: scale(1.2);
+    opacity: 0;
+    transition: var(--transition1);
+    z-index: 2;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--onyx);
+    border-radius: 8px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white2);
+    font-size: 18px;
+    opacity: .7;
+}
+
+    .modal-close-btn:hover, .modal-close-btn:focus { opacity: 1; }
+    .modal-close-btn ion-icon { --ionicon-stroke-width: 50px; }
+
+.modal-avatar-box {
+    background: var(--bg-gradient-onyx);
+    width: max-content;
+    border-radius: 14px;
+    margin-bottom: 15px;
+    box-shadow: var(--shadow2);
+}
+
+.modal-img-wrapper > img { display: none; }
+
+.modal-title {
+    margin-bottom: 4px;
+    white-space: nowrap; 
+ }
+
+.modal-content time {
+    font-size: var(--fs6);
+    color: var(--light-gray70);
+    font-weight: var(--fw500);
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    color: var(--light-gray);
+    font-size: var(--fs6);
+    font-weight: var(--fw300);
+    line-height: 1.6;
+}
+
+/*CLIENTS*/
+
+.clients { margin-bottom: 15px; }
+
+.clients-list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 15px;
+    margin: 0 -15px;
+    padding: 25px;
+    padding-bottom: 25px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: 25px;
+}
+
+.clients-item {
+    min-width: 50%;
+    scroll-snap-align: start;
+}
+
+    .clients-item img {
+        width: 100%;
+        filter: grayscale(0);
+        transition: var(--transition1);
+    }
+
+        .clients-item img:hover { filter: grayscale(1);}
+
+/*RESUME*/
+
+.article-title { margin-bottom: 30px; }
+
+.timeline { margin-bottom: 30px; }
+
+    .timeline .title-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+
+.timeline-list {
+    font-size: var(--fs6);
+    margin-left: 45px;
+}
+
+    .timeline-list span {
+        color: var(--vegas-gold);
+        font-weight: var(--fw400);
+        line-height: 1.6;
+    }
+
+.timeline-item { position: relative; }
+
+    .timeline-item:not(:last-child) { margin-bottom: 20px; }
+        .timeline-item:not(:last-child)::before {
+            content: '';
+            position: absolute;
+            top: -25px;
+            left: -30px;
+            width: 1px;
+            height: calc(100% + 50px);
+            background: var(--jet);
+        }
+
+    .timeline-item::after {
+        content: '';
+        position: absolute;
+        top: 5px;
+        left: -33px;
+        height: 6px;
+        width: 6px;
+        border-radius: 50%;
+        background: var(--text-gradient-yellow);
+        box-shadow: 0 0 0 4px var(--jet);
+    }
+
+.timeline-item-title {
+    font-size: var(--fs6);
+    line-height: 1.3;
+    margin-bottom: 7px;
+}
+
+.timeline-text {
+    color: var(--light-gray);
+    font-weight: var(--fw300);
+    line-height: 1.6;
+    text-align: justify;
+}
+
+
+/*PORTFOLIO*/
+
+.filter-list { display: none; }
+
+.filter-select-box { 
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.filter-select {
+    background: var(--eerie-black2);
+    color: var(--light-gray);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--jet);
+    border-radius: 14px;
+    font-size: var(--fs6);
+    font-weight: var(--fw300);
+}
+
+    .filter-select.active .select-icon { transform: rotate(0.5turn); }
+
+.select-list {
+    background: var(--eerie-black2);
+    position: absolute;
+    top: calc(100% + 6px);
+    width: 100%;
+    padding: 6px;
+    border: 1px solid var(--jet);
+    border-radius: 14px;
+    z-index: 2;
+    visibility: hidden;
+    pointer-events: none;
+    transition: .5s ease-in-out;
+}
+
+    .filter-select.active + .select-list {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+    }
+
+.select-item button {
+    background: var(--eerie-black2);
+    color: var(--light-gray);
+    font-size: var(--fs6);
+    font-weight: var(--fw300);
+    text-transform: capitalize;
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+}
+
+    .select-item button:hover { --eerie-black2: hsl(240, 2%, 20%); }
+
+.project-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-bottom: 10px;
+}
+
+.project-item { display: none; }
+
+    .project-item.active {
+        display: block;
+        animation: scaleUp .25s ease forwards;
+    }
+
+        @keyframes scaleUp {
+            0% { transform: scale(0.5); }
+            100% { transform: scale(1); }
+        }
+
+    .project-item > a { width: 100%; }
+
+.project-img {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+    .project-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--transition1);
+    }
+
+    .project-img::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        z-index: 1;
+        transition: var(--transition1);
+    }
+
+        .project-item > a:hover img { transform: scale(1.1); }
+
+        .project-item > a:hover .project-img::before { background: hsla(0, 0%, 0%, .5); }
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-media {
+    max-width: 500%;
+    max-height: 500%;
+    display: none;
+}
+
+/* Nút đóng */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.project-item-icon-box {
+    --scale: .8;
+
+    background: var(--jet);
+    color: var(--orange-yellow-crayola);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(var(--scale));
+    font-size: 20px;
+    padding: 18px;
+    border-radius: 12px;
+    opacity: 0;
+    z-index: 1;
+    transition: var(--transition1);
+}
+
+    .project-item > a:hover .project-item-icon-box {
+        --scale: 1;
+        opacity: 1;
+    }
+
+    .project-item-icon-box ion-icon { --ionicon-stroke-width: 50px; }
+
+.project-title, .project-category { margin-left: 10px; }
+
+    .project-title {
+        color: var(--white2);
+        font-size: var(--fs5);
+        font-weight: var(--fw400);
+        text-transform: capitalize;
+        line-height: 1.3;
+    }
+
+    .project-category {
+        color: var(--light-gray70);
+        font-size: var(--fs6);
+        font-weight: var(--fw300);
+    }
+
+/*MEDIA QUERIES*/
+
+@media (min-width: 450px) {
+    .clients-item { min-width: calc(33.33% - 10px); }
+
+    .project-img, .blog-banner-box { height: auto; }
+}
+
+@media (min-width: 580px) {
+    :root {
+        --fs1: 32px;
+        --fs2: 24px;
+        --fs3: 26px;
+        --fs4: 18px;
+        --fs6: 15px;
+        --fs7: 15px;
+        --fs8: 12px;
+    }
+
+    .sidebar, article {
+        width: 520px;
+        margin-inline: auto;
+        padding: 30px;
+    }
+
+    .article-title {
+        font-weight: var(--fw600);
+        padding-bottom: 15px;
+    }
+
+        .article-title::after {
+            width: 40px;
+            height: 5px;
+        }
+
+    .icon-box {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        font-size: 18px;
+    }
+
+    main {
+        margin-top: 60px;
+        margin-bottom: 100px;
+    }
+
+    .sidebar {
+        max-height: 180px;
+        margin-bottom: 30px;
+    }
+
+        .sidebar.active { max-height: 584px; }
+
+    .sidebar-info { gap: 25px; }
+
+    .avatar-box { border-radius: 30px; }
+        .avatar-box img { width: 120px; }
+
+    .info-content .name { margin-bottom: 15px; }
+    .info-content .title { padding: 5px 10px; }
+
+    .info-more-btn {
+        top: -30px;
+        right: -30px;
+        padding: 10px 15px;
+    }
+
+        .info-more-btn span {
+            display: block;
+            font-size: var(--fs8);
+        }
+
+        .info-more-btn ion-icon { display: none; }
+
+    .separator { margin: 32px 0; }
+
+    .contacts-list { gap: 20px; }
+
+    .contact-info {
+        max-width: calc(100% - 64px);
+        width: calc(100% - 64px);
+    }
+
+    .navbar { border-radius: 20px 20px 0 0; }
+
+    .navbar-list { gap: 20px; }
+    .navbar-link { --fs8: 14px; }
+
+    .about .article-title { margin-bottom: 20px; }
+    .about-text { margin-bottom: 40px; }
+
+    .service-item {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 18px;
+        padding: 30px;
+    }
+
+    .service-icon-box {
+        margin-bottom: 0;
+        margin-top: 5px;
+    }
+
+    .service-content-box { text-align: left; }
+
+    .testimonials-title { margin-bottom: 25px; }
+
+    .testimonials-list {
+        gap: 30px;
+        margin: 0 -30px;
+        padding: 30px;
+        padding-bottom: 35px;
+    }
+
+    .content-card {
+        padding: 30px;
+        padding-top: 25px;
+    }
+
+    .testimonials-avatar-box {
+        transform: translate(30px, -30px);
+        border-radius: 28px;
+    }
+
+        .testimonials-avatar-box img { width: 80px; }
+
+    .testimonials-item-title {
+        margin-bottom: 10px;
+        
+    .testimonials-text {
+        line-clamp: 2;
+        -webkit-line-clamp: 2;
+    }
+
+    .modal-container {padding: 20px; }
+
+    .testimonials-modal {
+        display: flex;
+        justify-content: flex-start;
+        align-items: stretch;
+        gap: 25px;
+        padding: 30px;
+        border-radius: 20px;
+    }
+
+    .modal-img-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .modal-avatar-box {
+        border-radius: 18px;
+        margin-bottom: 0;
+    }
+
+        .modal-avatar-box img { width: 65px; }
+
+    .modal-img-wrapper > img {
+        display: block;
+        position: relative;
+        /* flex-grow: 1; */
+        width: 35px;
+        top: 50px;
+    }
+
+    .clients-list {
+        gap: 25px;
+        margin: 0 -30px;
+        padding: 45px;
+        scroll-padding-inline: 45px;
+    }
+
+    .clients-item { min-width: calc(33..33% - 35px); }
+
+    .timeline-list { margin-left: 65px; }
+
+    .timeline-item:not(:last-child)::before { left: -40px; }
+
+    .timeline-item::after {
+        height: 8px;
+        width: 8px;
+        left: -43px;
+    }
+
+    .skills-item:not(:last-child) { margin-bottom: 25px; }
+
+    .project-img, .blog-banner-box { border-radius: 16px; }
+
+    .blog-posts-list { gap: 30px; }
+
+    .blog-content { padding: 25px; }
+
+    .mapbox {
+        height: 380px;
+        border-radius: 18px;
+    }
+
+    .input-wrapper {
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+
+    .form-input { padding: 15px 20px; }
+
+    textarea.form-input { margin-bottom: 30px; }
+
+    .form-btn {
+        --fs-6: 16px;
+        padding: 16px 20px;
+    }
+
+        .form-btn ion-icon { font-size: 18px; }
+}
+
+@media (min-width: 768px) {
+
+    .sidebar, article { width: 700px; }
+
+    .has-scrollbar::-webkit-scrollbar-button { width: 100px; }
+
+    .contacts-list {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 15px;
+    }
+
+    .navbar-link { --fs8: 15px; }
+
+    .testimonials-modal {
+        gap: 35px;
+        max-width: 680px;
+    }
+
+    .modal-avatar-box img { width: 80px; }
+
+    .article-title { padding-bottom: 20px; }
+
+    .filter-select-box { display: none; }
+
+    .filter-list {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 25px;
+        padding-left: 5px;
+        margin-bottom: 30px;
+    }
+
+    .filter-item button {
+        color: var(--light-gray);
+        font-size: var(--fs5);
+        transition: var(--transition1);
+    }
+
+        .filter-item button:hover { color: var(--light-gray70); }
+        .filter-item button.active { color: var(--orange-yellow-crayola); }
+
+    .project-list, .blog-posts-list { grid-template-columns: 1fr 1fr; }
+
+    .input-wrapper { grid-template-columns: 1fr 1fr; }
+
+    .form-btn {
+        width: max-content;
+        margin-left: auto;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    :root {
+        --shadow1: -4px 8px 24px hsla(0, 0%, 0%, .125);
+        --shadow2: 0px 16px 30px hsla(0, 0%, 0%, .125);
+        --shadow3: 0px 16px 40px hsla(0, 0%, 0%, .125);
+    }
+
+    .sidebar, article {
+        width: 950px;
+        box-shadow: var(--shadow5);
+    }
+
+    main { margin-bottom: 60px; }
+
+    .main-content {
+        position: relative;
+        width: max-content;
+        margin: auto;
+    }
+
+    .navbar {
+        position: absolute;
+        bottom: auto;
+        top: 0;
+        left: auto;
+        right: 0;
+        width: max-content;
+        border-radius: 0 20px;
+        padding: 0 20px;
+        box-shadow: none;
+    }
+
+    .navbar-list {
+        gap: 30px;
+        padding: 0 20px;
+    }
+
+    .navbar-link { font-weight: var(--fw500); }
+
+    .service-list {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 25px;
+    }
+
+    .testimonials-item { min-width: calc(50% - 15px); }
+
+    .modal-img-wrapper > img { top: 20px; }
+
+    .clients-item { min-width: calc(25% - 15px); }
+
+    .project-list { grid-template-columns: repeat(3, 1fr); }
+
+    .blog-banner-box { height: 230px; }
+}
+
+@media (min-width: 1250px) {
+
+    body::-webkit-scrollbar { width: 20px; }
+    body::-webkit-scrollbar-track { background: var(--smoky-black); }
+
+    body::-webkit-scrollbar-thumb {
+        border: 5px solid var(--smoky-black);
+        background: hsla(0, 0%, 100%, .1);
+        border-radius: 20px;
+        box-shadow: inset 1px 1px 0 hsla(0, 0%, 100%, .11), inset -1px -1px 0 hsla(0, 0%, 100%, .11);
+    }
+
+    body::-webkit-scrollbar-thumb:hover { background: hsla(0, 0%, 100%, .15); }
+    body::-webkit-scrollbar-button { height: 60px; }
+
+    .sidebar, article { width: auto; }
+
+    article { min-height: 100%; }
+
+    main {
+        max-width: 1200px;
+        margin-inline: auto;
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        gap: 25px;
+    }
+
+    .main-content {
+        min-width: 75%;
+        width: 75%;
+        margin: 0;
+    }
+
+    .sidebar {
+        position: sticky;
+        top: 60px;
+        max-height: max-content;
+        height: 100%;
+        margin-bottom: 0;
+        padding-top: 60px;
+        z-index: 1;
+    }
+
+    .sidebar-info { flex-direction: column; }
+
+    .avatar-box img { width: 150px; }
+
+    .info-content .name {
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    .info-content .title { margin: auto; }
+
+    .info-more-btn { display: none; }
+
+    .sidebar-info-more {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .contacts-list { grid-template-columns: 1fr; }
+
+    .contact-info :is(.contact-link) {
+        white-space: nowrap;
+        overflow: visible;
+        text-overflow: unset;
+    }
+
+    .contact-info :is(.contact-link, time, address) {
+        --fs7: 14px;
+        font-weight: var(--fw300);
+    }
+
+    .separator:last-of-type {
+        margin: 15px 0;
+        opacity: 0;
+    }
+
+    .social-list { justify-content: center; }
+
+    .timeline-text { max-width: 700px; }
+}                                         
+            
+    </style>
+</head>
+<body>
+    <main>
+        <aside class="sidebar " data-sidebar>
+            <div class="sidebar-info">
+                <figure class="avatar-box">
+                    <img src="https://i.postimg.cc/j23LBh95/306858866-521095570032117-3174395457088468445-n.jpg" alt="avatar" width="80">
+                </figure>
+
+                <div class="info-content">
+                    <h1 class="name" title="Richard Hanrick">Nhóm 3-12I</h1>
+                    <p class="title">THPT Gia Lộc</p>
+                </div>
+
+                <button class="info-more-btn" data-sidebar-btn>
+                    <span>Thêm Thông Tin</span>
+                    <ion-icon name="chevron-down"></ion-icon>
+                </button>
+            </div>
+
+            <div class="sidebar-info-more">
+                <div class="separator"></div>
+
+                <ul class="contacts-list">
+                    <li class="contact-item">
+                        
+                        <div class="contact-info">
+                            <p class="contact-title">Thành Viên Thực Hiện </p>
+
+                            <a class="contact-link">Đặng Thành Trung </a>
+                        </div>
+                    </li>
+
+
+
+                    <li class="contact-item">
+
+                        <div class="contact-info">
+                            <p class="contact-title">Thành Viên Nội Dung </p>
+
+                            <a class="contact-link">Lương Tuấn Anh </a>
+                            <a class="contact-link">Phạm Quỳnh Anh  </a>
+                            <a class="contact-link">Nguyễn Ngọc Anh </a>
+                            <a class="contact-link">Trần Đức Hải  </a>
+                            <a class="contact-link">Đàm Thành Vinh  </a>
+                            <a class="contact-link">Đỗ Thị Trà My</a>
+                            <a class="contact-link">Đoàn Thu Trang </a>
+                            <a class="contact-link">Đồng Thị Thu Hường </a>
+                            <a class="contact-link">Phạm Thị Ngọc Ánh </a>
+
+                        </div>
+                    </li>
+                  
+
+                    <li class="contact-item">
+                        
+                        <div class="contact-info">
+                            <p class="contact-title">Tài Liệu Tham Khảo </p>
+
+                            <address>Internet</address>
+                        </div>
+                    </li>
+                </ul>
+                
+ 
+            </div>
+        </aside>
+
+        <div class="main-content">
+            <nav class="navbar">
+                <ul class="navbar-list">
+                    <li class="navbar-item"><button class="navbar-link active" data-nav-link>Giới Thiệu</button></li>
+                    <li class="navbar-item"><button class="navbar-link" data-nav-link>Lịch Sử</button></li>
+                    <li class="navbar-item"><button class="navbar-link" data-nav-link>Hình Ảnh Và Video</button></li>
+                    <li class="navbar-item"><button class="navbar-link" data-nav-link>Bài Hát Truyền Thống </button></li>                    
+                </ul>
+            </nav>
+
+            <article class="about active" data-page="giới thiệu">
+                <header>
+                    <h2 class="h2 article-title">THPT GIA LỘC</h2>
+                </header>
+
+                <section class="about-text">
+                    <p> Trường THPT Gia Lộc có địa chỉ tại 183 Nguyễn Chế Nghĩa làng Giỗ, Gia Lộc Hải Dương. Trường được thành lập vào năm 1961 và tọa lạc tại xã Nghĩa Hưng, Gia Lộc, Hải Dương. Quy mô ban đầu của trường tương đối nhỏ chỉ với 3 lớp và hơn 150 học sinh trong năm học đầu tiên.</p>
+                    <p>Một ngôi trường danh tiếng của huyện Gia Lộc, tỉnh Hải Dương, không chỉ là nơi cung cấp kiến thức mà còn là nơi bồi dưỡng nhân cách cho thế hệ trẻ. Với đội ngũ giáo viên giàu kinh nghiệm và cơ sở vật chất hiện đại, nhà trường đã và đang tạo ra một môi trường học tập lý tưởng cho học sinh. </p>
+                    
+                </section>
+
+                <section class="service">                    
+                    <h3 class="h3 service-title">Các Tổ Chuyên Môn </h3>
+
+                    <ul class="service-list">
+                        <li class="service-item" data-url="">
+                            <div class="service-icon-box">
+                                <img src="https://i.postimg.cc/t4jjp6jC/math-calculation-icon-graphic-elements-1499119.webp" alt="60" width="60">
+                            </div>                           
+                            <div class="service-content-box">                               
+                                <h4 class="h4 service-item-title">Tổ Toán Tin </h4>
+                                <p class="service-item-text">ND. </p>                           
+                            </div>
+                        </li>
+
+                        <li class="service-item" data-url="C:\Users\Admin\Downloads\n.html">
+                            <div class="service-icon-box">
+                                <img src="https://i.postimg.cc/52SM0t45/images.png" alt="icon" width="40">
+                            </div>
+
+                            <div class="service-content-box">
+                                <h4 class="h4 service-item-title">Tổ Khoa Học Tự Nhiên </h4>
+                                <p class="service-item-text">ND </p>
+                            </div>
+                        </li>
+
+                        <li class="service-item">
+                            <div class="service-icon-box">
+                                <img src="https://i.postimg.cc/VNZprr3t/download.png" alt="icon" width="40">
+                            </div>
+
+                            <div class="service-content-box">
+                                <h4 class="h4 service-item-title">Tổ Khoa Học Xã Hội </h4>
+                                <p class="service-item-text">Nội Dung </p>
+                            </div>
+                        </li>
+
+                        <li class="service-item">
+                            <div class="service-icon-box">
+                                <img src="https://i.postimg.cc/8cQyMhw7/download.png" alt="icon" width="40">
+                            </div>
+
+                            <div class="service-content-box">
+                                <h4 class="h4 service-item-title">Tổ Ngoại Ngữ </h4>
+                                <p class="service-item-text">ND </p>
+                            </div>                       
+                        </li>
+
+
+                        <li class="service-item">
+                            <div class="service-icon-box">
+                                <img src="https://i.postimg.cc/VN24PjxK/download.png" alt="icon" width="40">
+                            </div>
+
+                            <div class="service-content-box">
+                                <h4 class="h4 service-item-title">Tổ Thể Chất Và Quốc Phòng </h4>
+                                <p class="service-item-text">ND </p>
+                            </div>                       
+                        </li>
+
+
+                        <li class="service-item">
+                            <div class="service-icon-box">
+                                <img src="https://i.postimg.cc/j5V6FRf9/download.jpg" alt="icon" width="40">
+                            </div>
+
+                            <div class="service-content-box">
+                                <h4 class="h4 service-item-title">Tổ Ngữ Văn </h4>
+                                <p class="service-item-text">ND </p>
+                            </div>                       
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="testimonials">
+                    <h3 class="h3 testimonials-title">Các Thành Tích Tiêu Biểu </h3>
+
+                    <ul class="testimonials-list has-scrollbar">
+                        <li class="testimonials-item">
+                            <div class="content-card" data-testimonials-item>
+                                <figure class="testimonials-avatar-box">
+                                    <img data-testimonials-avatar >
+                                </figure>
+
+                                <h4 class="h4 testimonials-item-title" data-testimonials-title>NĂM HỌC 2020-2021</h4>
+
+                                <div class="testimonials-text" data-testimonials-text>
+                                    <p>Tại hội nghị tổng kết năm học 2020-2021 và triển khai nhiệm vụ năm  học 2021-2022 diễn ra vào ngày 11/9. Trường ta đã vinh dự nhận được bằng khen Trường THPT <i> có thành tích hoàn thành xuất sắc nhiệm vụ năm học 2020-2021 và đạt điểm trung bình các môn thi tốt nghiệp cao nhất tỉnh năm học 2020-2021.</i> </p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="testimonials-item">
+                            <div class="content-card" data-testimonials-item>
+                                <figure class="testimonials-avatar-box">
+                                    <img data-testimonials-avatar width="60">
+                                </figure>
+
+                                <h4 class="h4 testimonials-item-title" data-testimonials-title>Ngày 8-Tháng 10- Năm 2021</h4>
+
+                                <div class="testimonials-text" data-testimonials-text>
+                                    <p><b>Thầy giáo Phạm Vũ Tiến</b> và <b>thầy Vũ Quang Như</b> cùng hai bạn học sinh <b>Nguyễn Thị Minh Thu, Vũ Khắc Long </b> đã vinh dự được tuyên dương trong “Lễ tuyên dương khen thưởng học sinh giỏi năm học 2020 – 2021” của UBND tỉnh Hải Dương. </p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="testimonials-item">
+                            <div class="content-card" data-testimonials-item>
+                                <figure class="testimonials-avatar-box">
+                                    <img data-testimonials-avatar width="60">
+                                </figure>
+
+                                <h4 class="h4 testimonials-item-title" data-testimonials-title>17-18/12/2023  </h4>
+
+                                <div class="testimonials-text" data-testimonials-text>
+                                    <p><b>Nhóm GV dạy Tiếng Anh 12:</b></p>
+                                    <ul>
+                                        <li><p>17-18/12/2023,tại cuộc thi Sáng tạo khoa học - kỹ thuật cấp tỉnh dành cho học sinh Trung học lần thứ XII năm học 2023-2024, trường THPT Gia Lộc đã xuất sắc đạt giải TƯ vòng thi chung khảo.</p></li>
+                                        <li><p>Dự án: “Phát triển kỹ năng mềm đối với học sinh THPT” được thực hiện bởi các học sinh phụ trách chính: Hoàng An Nguyên - Phạm Thị Thu Thắm - 11K cùng giáo viên hướng dẫn: Vũ Thị Thu Lan.</p></li>
+                                        <li><p>Với sự tham gia tích cực và sự sáng tạo độc đáo trong chính các bạn cùng lời góp ý, hướng dẫn, cổ vũ nhiệt tình của các giáo viên trong trường, các bạn đã đem đến cho cuộc thi một sản phẩm hoàn chỉnh, có giá trị. Điều đó có ý nghĩa rất lớn làm nên thành công của Nhà trường. Xin được dành lời chúc mừng chân thành nhất tới nhóm thực hiện dự án, chúc mừng Nhà trường!</p></li>                                    
+                                    </ul>                                    
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="testimonials-item">
+                            <div class="content-card" data-testimonials-item>
+                                <figure class="testimonials-avatar-box">
+                                    <img data-testimonials-avatar width="60">
+                                </figure>
+
+                                <h4 class="h4 testimonials-item-title" data-testimonials-title>NĂM HỌC 2022-2023</h4>
+
+                                <div class="testimonials-text" data-testimonials-text>
+                                    <p><b>Nhóm GV dạy Tiếng Anh 12:</b></p>
+                                    <ul>
+                                        <li><p>1. Cô Hoàng Thị Duyên</p></li>
+                                        <li><p>2. Thầy Nguyễn Hoàng Đô</p></li>
+                                        <li><p>3. Cô Nguyễn Thị Thu</p></li>
+                                        <li><p>4. Cô Đinh Thị Kiều Vân</p></li>
+                                    <p><b>- Với trung bình môn Tiếng Anh TN THPT 2023: 6,462, xếp thứ 3/54 toàn tỉnh.</b></p>
+                                    </ul>
+                                     <p><b>Nhóm GV dạy Tiếng Anh 12:</b></p>
+                                    <ul>
+                                        <li><p>1. Cô Nguyễn Thị Thuý Lan</p></li>
+                                        <li><p>2. Thầy Đỗ Duy Ninh</p></li>
+                                        <li><p>3. Cô Nguyễn Thị Phương</p></li>
+                                        <li><p>4. Cô Đoàn Thị Yến</p></li>
+                                    <p><b>-Với trung bình môn toán: 7,711. Xếp thứ 5/54 toàn tỉnh.</b></p>
+                                    </ul>
+                                         
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="testimonials-item">
+                            <div class="content-card" data-testimonials-item>
+                                <figure class="testimonials-avatar-box">
+                                    <img data-testimonials-avatar width="60">
+                                </figure>
+
+                                <h4 class="h4 testimonials-item-title" data-testimonials-title>NĂM HỌC 2023-2024</h4>
+
+                                <div class="testimonials-text" data-testimonials-text>
+                                    
+                                        <p><b>1. Nhóm Hóa học:</b></p> 
+                                                <ul>
+                                                    <p><li>Cô Lê Thị Xuê</li></p>
+                                                    <p><li>Cô Nguyễn Thị Hà</li></p>
+                                                    <p><li>Điểm TB: 7,487</li></p>
+                                                    <p><li>Xếp thứ: 5/40 </li></p>
+                                        <p><b>1. Nhóm Địa Lý:</b></p>
+                                                <ul>
+                                                   <p><li> Cô: Nguyễn Thị Dung</li></p>
+                                                   <p><li>Thầy: Phạm Vũ Tiến</li></p>
+                                                   <p><li> Điểm TB: 8,229</li></p>
+                                                   <p><li>Xếp thứ: 7/ 40 </li></p>
+                                                </ul>                                          
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="testimonials-item">
+                            <div class="content-card" data-testimonials-item>
+                                <figure class="testimonials-avatar-box">
+                                    <img data-testimonials-avatar width="60">
+                                </figure>
+
+                                <h4 class="h4 testimonials-item-title" data-testimonials-title>NĂM HỌC 2024-2025</h4>
+
+                                <div class="testimonials-text" data-testimonials-text>
+                                    <p><b>Kết quả đồng đội:</b></p>
+                                    <ul>
+                                        <li><p>🏆 Xếp thứ 6/39 trường.</p></li>
+                                    </ul>
+
+                                    <p><b>✨ Kết quả cá nhân:</b></p>
+                                    <ul>
+                                        <li><p>🥇 02 Giải Nhất:</p>
+                                            <ul>
+                                        <p><li>1 giải Nhất môn Ngữ văn</li></p>
+                                        <p><li>1 giải Nhất môn Địa lí</li></p>
+                                            </ul>
+                                        </p></li>
+                                        <li><p>🥈 11 Giải Nhì:</p>
+                                        <ul>
+                                            <p><li>Toán: 1 giải</li></p>
+                                            <p><li>Vật lí: 2 giải</li></p>
+                                            <p><li>Sinh học: 2 giải</li></p>
+                                            <p><li>Ngữ văn: 2 giải</li></p>
+                                            <p><li>Lịch sử: 2 giải</li></p>
+                                            <p><li>Địa lí: 2 giải</li></p>
+                                        </ul>
+                                        </li>
+                                        <li>🥉 13 Giải Ba:
+                                            <ul>
+                                                <p><li>Toán: 1 giải</li></p>
+                                                <p><li>Vật lí: 3 giải</li></p>
+                                                <p><li>Hóa học: 2 giải</li></p>
+                                                <p><li>Sinh học: 3 giải</li></p>
+                                                <p><li>Lịch sử: 2 giải</li></p>
+                                                <p><li>Tiếng Anh: 1 giải</li></p>
+                                                <p><li>Tin học: 1 giải</li></p>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+
+                <div class="modal-container " data-modal-container>
+                    <div class="overlay " data-overlay></div>
+
+                    <section class="testimonials-modal">
+                        <button class="modal-close-btn" data-modal-close-btn><ion-icon name="close-outline"></ion-icon></button>
+
+                        <div class="modal-img-wrapper">
+                            <figure class="modal-avatar-box">
+                                <img src="https://i.postimg.cc/zGDHfn3G/avatar-1.png" alt="Daniel Lewis" width="80" data-modal-img>
+                            </figure>
+
+                            <img src="https://i.postimg.cc/mZ00RwX7/icon-quote.png" alt="quote icon">
+                        </div>
+
+                        <div class="modal-content">
+                            <h4 class="h3 modal-title" data-modal-title>Daniel Lewis</h4>
+
+                            <div class="modal-text" data-modal-text>
+                                <p>Richard was hired to create a corporate identity. It's modern, clean and with a beautiful design that got a lot of praises from colleagues and visitors. We were very pleased with the work done. He has a lot of experience and is very concerned about the needs of client.</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <section class="clients">
+                    <h3 class="h3 clients-title">Các Câu Lạc Bộ Trường THPT Gia Lộc</h3>
+
+                    <ul class="clients-list has-scrollbar">
+                        <li class="clients-item">
+                            <a href="#"><img src="https://i.postimg.cc/Y92594tc/425738812-704956261802183-6794719995160986357-n.jpg" alt="logo"></a>
+                        </li>
+
+                        <li class="clients-item">
+                            <a href="#"><img src="https://i.postimg.cc/1Rjkm5TT/307017970-478939180916113-7773809462407284571-n.jpg" alt="logo"></a>
+                        </li>
+
+                        <li class="clients-item">
+                            <a href="#"><img src="https://i.postimg.cc/MG5LhWV9/294653262-477716534358903-4970616817548780549-n.jpg" alt="logo"></a>
+                        </li>
+
+                        <li class="clients-item">
+                            <a href="#"><img src="https://i.postimg.cc/fW1MHKwJ/276290881-106373788693339-2988165163555419824-n.jpg" alt="logo"></a>
+                        </li>
+
+                        <li class="clients-item">
+                            <a href="#"><img src="https://i.postimg.cc/Bn043nP3/440483014-1377263802990492-850382237307291380-n.jpg" alt="logo"></a>
+                        </li>
+
+                        <li class="clients-item">
+                            <a href="#"><img src="https://i.postimg.cc/LsypjkC4/370531010-258514743768053-1281487419660695531-n.jpg" alt="logo"></a>
+                        </li>
+                        <li class="clients-item">
+                            <a href="#"><img src="https://i.postimg.cc/MKk80pDB/294058165-190556953407464-5552545062934028125-n.jpg" alt="logo"></a>
+                        </li>
+                    </ul>
+                </section>
+
+            </article>
+            
+            <article class="resume " data-page="lịch sử">
+                <header>
+                    <h2 class="h2 article-title">Lịch Sử</h2>
+                </header>
+
+                <section class="timeline">
+                    <div class="title-wrapper">
+                        <div class="icon-box"><ion-icon name="book-outline"></ion-icon></div>
+
+                        <h3 class="h3">Lịch Sử Của Trường </h3>
+                    </div>
+
+                    <ol class="timeline-list">
+                        <li class="timeline-item">
+                            <h4 class="h4 timeline-item-title">1961</h4>
+                            <span>Trường Phổ thông cấp 2-3 Gia Lộc</span>
+                            <p class="timeline-text">Được thành lập vào năm 1961 với tên gọi ban đầu là Trường Phổ thông cấp 2-3 Gia Lộc, đặt tại xã Nghĩa Hưng, huyện Gia Lộc. Trong năm học đầu tiên 1961-1962, trường có quy mô nhỏ với 3 lớp 8 và 159 học sinh.</p>
+                        </li>
+
+                        <li class="timeline-item">
+                            <h4 class="h4 timeline-item-title">2-1973</h4>
+                            <span>Trường Phổ thông cấp 2-3 Gia Lộc</span>
+                            <p class="timeline-text">Đến tháng 2 năm 1973, trường chuyển về địa điểm mới tại thị trấn Gia Lộc để thuận tiện cho việc học tập của học sinh. Năm 1995, trường chính thức được đổi tên thành Trường THPT Gia Lộc.</p>
+                        </li>
+
+                        <li class="timeline-item">
+                            <h4 class="h4 timeline-item-title">1995 </h4>
+                            <span>Trường Trung Học Phổ Thông Gia Lộc</span>
+                            <p class="timeline-text">Năm 1995, trường chính thức được đổi tên thành Trường THPT Gia Lộc.</p>
+                        </li>
+                        <li class="timeline-item">
+                            <h4 class="h4 timeline-item-title">Hơn 60 năm </h4>
+                            <span>Trường Trung Học Phổ Thông Gia Lộc</span>
+                            <p class="timeline-text">Trải qua hơn 60 năm xây dựng và phát triển, Trường THPT Gia Lộc đã có những bước tiến đáng kể, trở thành một trong những trường hàng đầu trong số hơn 50 trường THPT của tỉnh Hải Dương.</p>
+                        </li>
+                    </ol>
+                </section>              
+            </article>
+
+
+
+
+
+
+
+
+            <article class="portfolio " data-page="hình ảnh và video">
+                <header>
+                    <h2 class="h2 article-title">THPT GIA LỘC</h2>
+                </header>
+
+                <section class="projects">
+                    <ul class="filter-list">
+                        <li class="filter-item"><button class="active" data-filter-btn>Toàn Bộ</button></li>
+                        <li class="filter-item"><button data-filter-btn>Hình Ảnh</button></li>
+                        <li class="filter-item"><button data-filter-btn>Poster</button></li>
+                        <li class="filter-item"><button data-filter-btn>Video</button></li>
+                    </ul>
+
+                    <div class="filter-select-box">
+                        <button class="filter-select " data-select>
+                            <div class="select-value" data-select-value>Select Category</div>
+
+                            <div class="select-icon">
+                                <ion-icon name="chevron-down"></ion-icon>
+                            </div>
+                        </button>
+
+                        <ul class="select-list">
+                            <li class="select-item"><button data-select-item>Toàn Bộ </button></li>
+                            <li class="select-item"><button data-select-item>Hình Ảnh </button></li>
+                            <li class="select-item"><button data-select-item>Poster</button></li>
+                            <li class="select-item"><button data-select-item>Video </button></li>
+                        </ul>
+                    </div>
+
+                    <ul class="project-list">
+                        <li class="project-item active" data-filter-item data-category="hình ảnh">  
+                            <a href="#" class="project-link" data-media="image" data-src="https://i.postimg.cc/bYF05nr4/374775071-761442249330780-5596212422255608655-n.jpg">
+                                <figure class="project-img">
+                                    <div class="project-item-icon-box">
+                                        <ion-icon name="eye-outline"></ion-icon>
+                                    </div>
+                                    <img src="https://i.postimg.cc/bYF05nr4/374775071-761442249330780-5596212422255608655-n.jpg" alt="fundo" loading="lazy">
+                                </figure>                                
+                            </a>
+                        </li>
+
+
+                        <li class="project-item active" data-filter-item data-category="video">  
+                            <a href="#" class="project-link" data-media="video" data-src="C:\Users\Admin\Downloads\Facebook.mp4">
+                                <figure class="project-img">
+                                    <div class="project-item-icon-box">
+                                        <ion-icon name="eye-outline"></ion-icon>
+                                    </div>
+                                    <img src="https://i.postimg.cc/3WMH2LX5/A-nh-chu-p-ma-n-hi-nh-51.png" alt="orizon" loading="lazy">
+                                </figure>                              
+                            </a>
+                        </li>
+
+
+                        <li class="project-item active" data-filter-item data-category="hình ảnh">
+                            <a href="#" class="project-link" data-media="image" data-src="https://i.postimg.cc/bN7xyjQT/374653625-761442212664117-1107586791908179899-n.jpg">
+                                <figure class="project-img">
+                                    <div class="project-item-icon-box">
+                                        <ion-icon name="eye-outline"></ion-icon>
+                                    </div>
+
+                                    <img src="https://i.postimg.cc/bN7xyjQT/374653625-761442212664117-1107586791908179899-n.jpg" alt="fundo" loading="lazy">
+                                </figure>
+                              
+                            </a>
+                        </li>
+
+                        <li class="project-item active" data-filter-item data-category="poster">
+                            <a href="#" class="project-link" data-media = "image" data-src="https://i.postimg.cc/MTn0ZZr9/327322104-653379803230164-1136033731884363581-n.jpg">
+                                <figure class="project-img">
+                                    <div class="project-item-icon-box">
+                                        <ion-icon name="eye-outline"></ion-icon>
+                                    </div>
+
+                                    <img src="https://i.postimg.cc/MTn0ZZr9/327322104-653379803230164-1136033731884363581-n.jpg" alt="brawlhalla" loading="lazy">
+                                </figure>                   
+                            </a>
+                        </li>
+
+                        <li class="project-item active" data-filter-item data-category="hình ảnh">
+                            <a href="#" class="project-link" data-media = "image" data-src="https://i.postimg.cc/Pq4YQp03/374742765-761442079330797-7506621817981351668-n.jpg">
+                                <figure class="project-img">
+                                    <div class="project-item-icon-box">
+                                        <ion-icon name="eye-outline"></ion-icon>
+                                    </div>
+
+                                    <img src="https://i.postimg.cc/Pq4YQp03/374742765-761442079330797-7506621817981351668-n.jpg" alt="dsm." loading="lazy">
+                                </figure>                              
+                            </a>
+                        </li>
+
+                        <li class="project-item active" data-filter-item data-category="hình ảnh">
+                            <a href="#" class="project-link" data-media = "image" data-src="https://i.postimg.cc/28tD306T/425364029-863615972446740-2417809152598377656-n.jpg" >
+                                <figure class="project-img">
+                                    <div class="project-item-icon-box">
+                                        <ion-icon name="eye-outline"></ion-icon>
+                                    </div>
+
+                                    <img src="https://i.postimg.cc/28tD306T/425364029-863615972446740-2417809152598377656-n.jpg" alt="metaspark" loading="lazy">
+                                </figure>                              
+                            </a>
+                        </li>
+
+
+                        <li class="project-item active" data-filter-item data-category="hình ảnh">
+                            <a href="#" class="project-link" data-media = "image" data-src="https://i.postimg.cc/8zrVvLfG/458320850-1003907368417599-3981032089490197507-n.jpg" >
+                                <figure class="project-img">
+                                    <div class="project-item-icon-box">
+                                        <ion-icon name="eye-outline"></ion-icon>
+                                    </div>
+
+                                    <img src="https://i.postimg.cc/8zrVvLfG/458320850-1003907368417599-3981032089490197507-n.jpg" alt="metaspark" loading="lazy">
+                                </figure>                              
+                            </a>
+                        </li>
+
+
+
+                        <li class="project-item active" data-filter-item data-category="video">
+                            <a href="#" class="project-link" data-media="video" data-src="C:\Users\Admin\Downloads\Facebook (1).mp4">
+                                <figure class="project-img">
+                                    <div class="project-item-icon-box">
+                                        <ion-icon name="eye-outline"></ion-icon>
+                                    </div>
+
+                                    <img src="https://i.postimg.cc/fy1MBWhP/A-nh-chu-p-ma-n-hi-nh-48.png" alt="summary" loading="lazy">
+                                </figure>                               
+                            </a>
+                        </li>
+
+ 
+                        <li class="project-item active" data-filter-item data-category="poster">
+                            <a href="#" class="project-link" data-media="image" data-src="https://i.postimg.cc/Px0WCGgT/318967243-577375054404168-4139598784787276191-n.jpg" >
+                                <figure class="project-img">
+                                    <div class="project-item-icon-box">
+                                        <ion-icon name="eye-outline"></ion-icon>
+                                    </div>
+
+                                    <img src="https://i.postimg.cc/Px0WCGgT/318967243-577375054404168-4139598784787276191-n.jpg" alt="task manager" loading="lazy">
+                                </figure>                             
+                            </a>
+                        </li>
+
+                        <li class="project-item active" data-filter-item data-category="video">
+                            <a href="#" class="project-link" data-media = "video" data-src="C:\Users\Admin\Downloads\Facebook (2).mp4" >
+                                <figure class="project-img" class="project-link" data-media="video" data-src="https://www.w3schools.com/html/mov_bbb.mp4">
+                                    <div class="project-item-icon-box">
+                                        <ion-icon name="eye-outline"></ion-icon>
+                                    </div>
+
+                                    <img src="https://i.postimg.cc/fbMDHg6M/A-nh-chu-p-ma-n-hi-nh-49.png" alt="arrival" loading="lazy">
+                                </figure>                           
+                            </a>
+                        </li>
+
+                        <li class="project-item active" data-filter-item data-category="hình ảnh">
+                            <a href="#" class="project-link" data-media = "image" data-src="https://i.postimg.cc/sXHWtFj5/341455009-1364057567719232-8672723552308325049-n.jpg" >
+                                <figure class="project-img">
+                                    <div class="project-item-icon-box">
+                                        <ion-icon name="eye-outline"></ion-icon>
+                                    </div>
+
+                                    <img src="https://i.postimg.cc/sXHWtFj5/341455009-1364057567719232-8672723552308325049-n.jpg" alt="metaspark" loading="lazy">
+                                </figure>                              
+                            </a>
+                        </li>
+
+                        <li class="project-item active" data-filter-item data-category="hình ảnh">
+                            <a href="#" class="project-link" data-media = "image" data-src="https://i.postimg.cc/qM3KZZ9C/342509252-189986163893740-6279111049792450086-n.jpg" >
+                                <figure class="project-img">
+                                    <div class="project-item-icon-box">
+                                        <ion-icon name="eye-outline"></ion-icon>
+                                    </div>
+
+                                    <img src="https://i.postimg.cc/qM3KZZ9C/342509252-189986163893740-6279111049792450086-n.jpg" alt="metaspark" loading="lazy">
+                                </figure>                              
+                            </a>
+                        </li>
+
+                        <li class="project-item active" data-filter-item data-category="poster">
+                            <a href="#" class="project-link" data-media = "image" data-src="https://i.postimg.cc/x1Wnp6Vq/348595800-484439237171060-6399118342721560712-n.jpg" >
+                                <figure class="project-img">
+                                    <div class="project-item-icon-box">
+                                        <ion-icon name="eye-outline"></ion-icon>
+                                    </div>
+
+                                    <img src="https://i.postimg.cc/x1Wnp6Vq/348595800-484439237171060-6399118342721560712-n.jpg" alt="metaspark" loading="lazy">
+                                </figure>                              
+                            </a>
+                        </li>
+
+
+                        <li class="project-item active" data-filter-item data-category="hình ảnh">
+                            <a href="#" class="project-link" data-media = "image" data-src="https://i.postimg.cc/jqWvtcpR/335008053-226500353079378-6902820692373681492-n.jpg" >
+                                <figure class="project-img">
+                                    <div class="project-item-icon-box">
+                                        <ion-icon name="eye-outline"></ion-icon>
+                                    </div>
+
+                                    <img src="https://i.postimg.cc/jqWvtcpR/335008053-226500353079378-6902820692373681492-n.jpg" alt="metaspark" loading="lazy">
+                                </figure>                              
+                            </a>
+                        </li>
+
+                        <li class="project-item active" data-filter-item data-category="poster">
+                            <a href="#" class="project-link" data-media = "image" data-src="https://i.postimg.cc/L6tt8bNF/312440446-542368331238174-3632047258927883131-n.jpg" >
+                                <figure class="project-img">
+                                    <div class="project-item-icon-box">
+                                        <ion-icon name="eye-outline"></ion-icon>
+                                    </div>
+
+                                    <img src="https://i.postimg.cc/L6tt8bNF/312440446-542368331238174-3632047258927883131-n.jpg" alt="metaspark" loading="lazy">
+                                </figure>                              
+                            </a>
+                        </li>
+
+                        <li class="project-item active" data-filter-item data-category="hình ảnh">
+                            <a href="#" class="project-link" data-media = "image" data-src="https://i.postimg.cc/4NQcghxJ/305468960-5660236303997995-7865824294066363288-n.jpg" >
+                                <figure class="project-img">
+                                    <div class="project-item-icon-box">
+                                        <ion-icon name="eye-outline"></ion-icon>
+                                    </div>
+
+                                    <img src="https://i.postimg.cc/4NQcghxJ/305468960-5660236303997995-7865824294066363288-n.jpg" alt="metaspark" loading="lazy">
+                                </figure>                              
+                            </a>
+                        </li> 
+
+
+                        <li class="project-item active" data-filter-item data-category="hình ảnh">
+                            <a href="#" class="project-link" data-media = "image" data-src="https://i.postimg.cc/8zrVvLfG/458320850-1003907368417599-3981032089490197507-n.jpg" >
+                                <figure class="project-img">
+                                    <div class="project-item-icon-box">
+                                        <ion-icon name="eye-outline"></ion-icon>
+                                    </div>
+
+                                    <img src="https://i.postimg.cc/8zrVvLfG/458320850-1003907368417599-3981032089490197507-n.jpg" alt="metaspark" loading="lazy">
+                                </figure>                              
+                            </a>
+                        </li>
+
+                        <li class="project-item active" data-filter-item data-category="hình ảnh">
+                            <a href="#" class="project-link" data-media = "image" data-src="https://i.postimg.cc/D0z9wG3t/439942167-914381907370146-6161107786617455467-n.jpg" >
+                                <figure class="project-img">
+                                    <div class="project-item-icon-box">
+                                        <ion-icon name="eye-outline"></ion-icon>
+                                    </div>
+
+                                    <img src="https://i.postimg.cc/D0z9wG3t/439942167-914381907370146-6161107786617455467-n.jpg" alt="metaspark" loading="lazy">
+                                </figure>                              
+                            </a>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!-- Modal -->
+                        <div id="mediaModal" class="modal">
+                            <span class="close">&times;</span>
+                            <div class="modal-content">
+                            <img id="modalImage" class="modal-media">
+                            <video id="modalVideo" class="modal-media" controls width="800" height="450"></video>
+                            </div>
+                        </div>                     
+                    </ul>
+                </section>
+            </article>
+
+
+            <article class="blog " data-page="bài hát truyền thống ">
+                <header>
+                    <h2 class="h2 article-title">Bài Hát</h2>
+                </header>
+                <iframe width="840" height="500" src="https://www.youtube.com/embed/GPhW-_SWAiY" title="Ca khúc: &quot;VINH QUANG TRƯỜNG THPT GIA LỘC MẾN YÊU&quot; - Sáng tác: Đức Tần (2011)." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                
+            </article>          
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+<script type="text/javascript">
+    'use strict';
+
+//Opening or closing side bar
+
+const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
+
+const sidebar = document.querySelector("[data-sidebar]");
+const sidebarBtn = document.querySelector("[data-sidebar-btn]");
+
+sidebarBtn.addEventListener("click", function() {elementToggleFunc(sidebar); })
+
+//Activating Modal-testimonial
+
+const testimonialsItem = document.querySelectorAll('[data-testimonials-item]');
+const modalContainer = document.querySelector('[data-modal-container]');
+const modalCloseBtn = document.querySelector('[data-modal-close-btn]');
+const overlay = document.querySelector('[data-overlay]');
+
+const modalImg = document.querySelector('[data-modal-img]');
+const modalTitle = document.querySelector('[data-modal-title]');
+const modalText = document.querySelector('[data-modal-text]');
+
+const testimonialsModalFunc = function () {
+    modalContainer.classList.toggle('active');
+    overlay.classList.toggle('active');
+}
+
+for (let i = 0; i < testimonialsItem.length; i++) {
+    testimonialsItem[i].addEventListener('click', function () {
+        modalImg.src = this.querySelector('[data-testimonials-avatar]').src;
+        modalImg.alt = this.querySelector('[data-testimonials-avatar]').alt;
+        modalTitle.innerHTML = this.querySelector('[data-testimonials-title]').innerHTML;
+        modalText.innerHTML = this.querySelector('[data-testimonials-text]').innerHTML;
+
+        testimonialsModalFunc();
+    })
+}
+
+//Activating close button in modal-testimonial
+
+modalCloseBtn.addEventListener('click', testimonialsModalFunc);
+overlay.addEventListener('click', testimonialsModalFunc);
+
+//Activating Filter Select and filtering options
+
+const select = document.querySelector('[data-select]');
+const selectItems = document.querySelectorAll('[data-select-item]');
+const selectValue = document.querySelector('[data-select-value]');
+const filterBtn = document.querySelectorAll('[data-filter-btn]');
+
+select.addEventListener('click', function () {elementToggleFunc(this); });
+
+for(let i = 0; i < selectItems.length; i++) {
+    selectItems[i].addEventListener('click', function() {
+
+        let selectedValue = this.innerText.toLowerCase();
+        selectValue.innerText = this.innerText;
+        elementToggleFunc(select);
+        filterFunc(selectedValue);
+
+    });
+}
+
+const filterItems = document.querySelectorAll('[data-filter-item]');
+
+const filterFunc = function (selectedValue) {
+    for(let i = 0; i < filterItems.length; i++) {
+        if(selectedValue == "toàn bộ") {
+            filterItems[i].classList.add('active');
+        } else if (selectedValue == filterItems[i].dataset.category) {
+            filterItems[i].classList.add('active');
+        } else {
+            filterItems[i].classList.remove('active');
+        }
+    }
+}
+
+//Enabling filter button for larger screens 
+
+let lastClickedBtn = filterBtn[0];
+
+for (let i = 0; i < filterBtn.length; i++) {
+    
+    filterBtn[i].addEventListener('click', function() {
+
+        let selectedValue = this.innerText.toLowerCase();
+        selectValue.innerText = this.innerText;
+        filterFunc(selectedValue);
+
+        lastClickedBtn.classList.remove('active');
+        this.classList.add('active');
+        lastClickedBtn = this;
+
+    })
+}
+
+// Enabling Contact Form
+
+const form = document.querySelector('[data-form]');
+const formInputs = document.querySelectorAll('[data-form-input]');
+const formBtn = document.querySelector('[data-form-btn]');
+
+for(let i = 0; i < formInputs.length; i++) {
+    formInputs[i].addEventListener('input', function () {
+        if(form.checkValidity()) {
+            formBtn.removeAttribute('disabled');
+        } else { 
+            formBtn.setAttribute('disabled', '');
+        }
+    })
+}
+
+// Enabling Page Navigation 
+
+const navigationLinks = document.querySelectorAll('[data-nav-link]');
+const pages = document.querySelectorAll('[data-page]');
+
+for(let i = 0; i < navigationLinks.length; i++) {
+    navigationLinks[i].addEventListener('click', function() {
+        
+        for(let i = 0; i < pages.length; i++) {
+            if(this.innerHTML.toLowerCase() == pages[i].dataset.page) {
+                pages[i].classList.add('active');
+                navigationLinks[i].classList.add('active');
+                window.scrollTo(0, 0);
+            } else {
+                pages[i].classList.remove('active');
+                navigationLinks[i]. classList.remove('active');
+            }
+        }
+    });
+}  
+
+document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("mediaModal");
+    const modalImage = document.getElementById("modalImage");
+    const modalVideo = document.getElementById("modalVideo");
+    const closeModal = document.querySelector(".close");
+
+    // Xử lý khi click vào ảnh/video
+    document.querySelectorAll(".project-link").forEach(item => {
+        item.addEventListener("click", function (event) {
+            event.preventDefault();
+            const mediaType = this.getAttribute("data-media");
+            const mediaSrc = this.getAttribute("data-src");
+
+            if (mediaType === "image") {
+                modalImage.src = mediaSrc;
+                modalImage.style.display = "block";
+                modalVideo.style.display = "none";
+            } else if (mediaType === "video") {
+                modalVideo.src = mediaSrc;
+                modalVideo.style.display = "block";
+                modalImage.style.display = "none";
+                modalVideo.play();
+            }
+
+            modal.style.display = "flex";
+        });
+    });
+
+    // Đóng modal
+    closeModal.addEventListener("click", function () {
+        modal.style.display = "none";
+        modalVideo.pause();
+    });
+
+    // Đóng modal khi click ngoài nội dung
+    modal.addEventListener("click", function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+            modalVideo.pause();
+        }
+    });
+});
+
+document.querySelectorAll(".service-item").forEach(item => {
+    item.addEventListener("click", function() {
+      let url = this.getAttribute("data-url");
+      if (url) {
+        window.location.href = url; // Chuyển hướng trang web
+      }
+    });
+  });
+
+</script>
+</html>            
